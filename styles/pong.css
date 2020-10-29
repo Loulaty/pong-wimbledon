@@ -7,50 +7,61 @@ body{
     align-items: center;
 }
 
-.court{
+.terrain{
     width:800px;
     height: 400px;
-    border: 1px solid #222;
+    border: 1px solid #000;
+    border-top-color: #fff;
+    border-bottom-color: #fff;
     position: relative;
 }
-.court > *{
+.terrain > *{
     position: absolute;
 }
-.mur{
-    height: 10px;
-    background-color: #fff;
-    width: 100%;
-}
-.mur.haut{
-    top: 0;
-}
-.mur.bas{
-    bottom: 0;
-}
+
 .balle{
-    background-color: #f00;
+    background-color: #fff;
     width: 10px;
     height: 10px;
     top: 50%;
     left: 50%;
 }
+
+
 .raquette{
-    background-color: #FF0;
+    background-color: #fff;
     width: 10px;
     height: 100px;
 }
 .raquette.joueur1{
     top:50%;
-    left: 10px;
+    left: 0px;
 }
 .raquette.joueur2{
     top:50%;
-    right: 10px;
+    right: 0px;
 }
 
 .raquette.touche-balle{
     background-color: #0f0;
 }
 .raquette.rate-balle{
-    background-color: #00;
+    background-color: #f00;
 }
+
+.score{
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color:#222;
+}
+.score2{
+    left:50%;
+}
+
+
