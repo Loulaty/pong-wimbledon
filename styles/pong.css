@@ -30,7 +30,7 @@ body{
     transform-origin: center;
 }
 
-@media (orientation: landscape) and (max-width:800px) {
+@media (max-width:900px) {
     .terrain{
         width: 600px;
         height: 300px;
