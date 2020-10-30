@@ -1,3 +1,10 @@
+/**
+ * Une balle de PONG avec tout ce qui va avec:
+ * gestion des rebonds
+ * gestion des accelerations
+ * gestion des rebonds légèrement différents selon où la balle touche la raquette
+ * gestion des parties gagnées /perdues
+ */
 class Balle{
     constructor($element) {
         this.$element=$element;
@@ -12,15 +19,28 @@ class Balle{
         this.direction=1;
         this.vitesseX=0;
         this.vitesseY=0;
-        this.vitesseMax=10;
-        
+
+        //sera défini par calcule tailles
+        this.vitesseDepart=terrain.largeur/500;
+        this.vitesseMax=0;
+        this.acceleration=0;
+        this.calculeTailles();
+    }
+    /**
+     * Calcule certaines propriétés qui sont proportionelles la taille du jeu
+     */
+    calculeTailles(){
+        this.vitesseMax=terrain.largeur/100;
+        this.acceleration=terrain.largeur / 1000;
     }
     /**
      * accelère la balle (avec une petite limite quand même)
      */
     accelere(){
-        if (Math.abs(this.vitesseX) < this.vitesseMax) {
-            this.vitesseX = this.vitesseX + 0.4;
+        if (this.vitesseX < this.vitesseMax) {
+            this.vitesseX = this.vitesseX + this.acceleration;
+        }else{
+            this.vitesseX = this.vitesseMax
         }
     }
      /**

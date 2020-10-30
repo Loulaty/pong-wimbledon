@@ -1,5 +1,5 @@
 /**
- * Permet 
+ * Gère la partie audio du projet
  */
 class Audio{
     constructor(){

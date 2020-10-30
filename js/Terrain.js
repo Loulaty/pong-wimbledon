@@ -1,8 +1,13 @@
 class Terrain{
     constructor($element){
         this.$element=$element;
-        this.hauteur=$element.height();
-        this.largeur=$element.width();
+        this.hauteur=0;
+        this.largeur=0;
+        this.calculeTailles();
+    }
+    calculeTailles(){
+        this.hauteur=this.$element.height();
+        this.largeur=this.$element.width();
     }
     affichePause(){
         this.$element.addClass("pause")

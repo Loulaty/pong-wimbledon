@@ -1,63 +1,36 @@
 let $body = $("body");
-let $terrain = $(".terrain");
-let $joueur1 = $(".joueur1");
-let $joueur2 = $(".joueur2");
-let $score1 = $(".score1");
-let $score2 = $(".score2");
-let $balle = $(".balle");
 
+//le terrain
+let $terrain = $(".terrain");
 let terrain=new Terrain($terrain);
+
+//la balle
+let $balle = $(".balle");
 let balle=new Balle($balle);
+
+//le joueur 1
+let $joueur1 = $(".joueur1");
+let $score1 = $(".score1");
 let joueur1=new Joueur($joueur1,$score1);
+
+//le joueur 2
+let $joueur2 = $(".joueur2");
+let $score2 = $(".score2");
 let joueur2=new Joueur($joueur2,$score2);
-let controles=new Controles();
-let audio=new Audio();
+
+//définit les adversaires pour l'attribution de points
 joueur1.adversaire=joueur2;
 joueur2.adversaire=joueur1;
-let paused=false;
-function demarreNouveauJeu(){
-    //stope pendant 3 secondes
-    paused=true;
-    terrain.affichePause();
-    setTimeout(
-        function(){
-            terrain.affichePlay();
-            paused=false;
-            balle.x=terrain.largeur/2;
-            balle.y=terrain.hauteur/2;
-            balle.vitesseX=2;
-            balle.vitesseY=Math.random()*2;
-            if(Math.random()>0.5){
-                balle.vitesseY=balle.vitesseY*-1;
-            }
-            if(Math.random()>0.5){
-                balle.direction=balle.direction*-1;
-            }
-        },
-        3000
-    );
 
-}
+//gèere les controlles utilisateur, clavier, tactile...
+let controles=new Controles();
 
-setInterval(() => {
-    if(!paused){
-        loop();
-    }
+//un peu de musique ?
+let audio=new Audio();
 
-}, 10);
+//controle la partie, pause, écran de demarage etc...
+let partie=new Partie();
 
-function loop() {
-    joueur1.bouge();
-    joueur2.bouge();
-    balle.bouge();
-}
-
-demarreNouveauJeu();
-
-// full screen
-$body.on("click",function(){
-    //$body[0].requestFullscreen();
-})
 
 
 

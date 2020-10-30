@@ -3,10 +3,10 @@ class Joueur{
         this.$raquette=$raquette;
         this.$score=$score;
         this.score=0;
-        this.y=$raquette.position().top;
-        this.x=$raquette.position().left;
-        this.hauteur=$raquette.height();
-        this.largeur=$raquette.width();
+        this.y=0;
+        this.x=0;
+        this.hauteur=0;
+        this.largeur=0;
         this.vitesse=3;
         /**
          * @type {Joueur}
@@ -14,6 +14,15 @@ class Joueur{
         this.adversaire=null;
         this.monte=false;
         this.descend=false;
+        this.calculeTailles();
+    }
+
+    calculeTailles(){
+        this.hauteur=this.$raquette.height();
+        this.largeur=this.$raquette.width();
+        this.y=parseInt(this.$raquette.css("top"));
+        this.x=parseInt(this.$raquette.css("left"));
+        
     }
 
     incrementeScore(points){
@@ -75,7 +84,7 @@ class Joueur{
         this.incrementeScore(10);
         this.rafraichitHTML();
         audio.fausseNote();
-        demarreNouveauJeu();
+        partie.demarreNouveauJeu();
     }
 }
 

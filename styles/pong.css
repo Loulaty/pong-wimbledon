@@ -20,24 +20,15 @@ body{
 
 .terrain{
     transition: filter 1s, transform 1s;
-    width:800px;
-    height: 400px;
+    width:90vmin;
+    height: 45vmin;
     flex-shrink: 0;
     border: 1px solid #000;
     border-top-color: #fff;
     border-bottom-color: #fff;
     position: relative;
     transform-origin: center;
-}
-
-@media (max-width:900px) {
-    .terrain{
-        width: 600px;
-        height: 300px;
-    }
-    .raquette{
-        height: 75px;
-    }
+    max-height: 90vh;
 }
 
 .terrain > *{
@@ -63,7 +54,7 @@ body{
 .raquette{
     background-color: #fff;
     width: 10px;
-    height: 100px;
+    height: 30%;
     outline: 1px solid black;
     outline-offset: -1px;
 }
@@ -116,17 +107,79 @@ body{
 .touche.active{
     color: chocolate;
 }
-.top{
+.touche.top{
     top:-15px;
 }
-.left{
+.touche.left{
     left:-40px;
 }
-.bottom{
+.touche.bottom{
     bottom:-15px;
 }
-.right{
+.touche.right{
     right: -40px;
 }
+
+
+@media (orientation:portrait){
+    .terrain{
+        transform: rotate(90deg);
+    }
+    .touche,.score{
+        transform: rotate(-90deg);
+    }
+
+}
+
+.ecran-debut{
+    transition: all 3s;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 1;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 50px;
+}
+.ecran-debut>*{
+    margin: 10px;
+}
+.ecran-debut .touche{
+    display: inline-flex;
+    transform: rotate(0deg) !important;
+}
+
+/* disparition de l'écran de début */
+.ecran-debut{
+    transition: all 2s;
+    transition-duration: 1s;
+    will-change: opacity, filter;
+    opacity: 1;
+    filter: blur(0px);
+}
+.ecran-debut.invisible{
+    pointer-events: none;
+    opacity: 0;
+    filter: blur(16px);
+}
+
+/* un simple bouton */
+.btn{
+    color: #000;
+    background-color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
 
 
