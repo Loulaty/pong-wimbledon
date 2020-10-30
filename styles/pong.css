@@ -1,3 +1,8 @@
+html{
+    margin: 0;
+    padding:0;
+    overflow: hidden;
+}
 body{
     background-color: #000000;
     color: #ffffff;
@@ -5,33 +10,62 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    max-height: 100vh;
+    max-width:100vw;
+    overflow: hidden;
+    margin: 0;
+    padding:0;
+    user-select: none;
 }
 
 .terrain{
+    transition: filter 1s, transform 1s;
     width:800px;
     height: 400px;
+    flex-shrink: 0;
     border: 1px solid #000;
     border-top-color: #fff;
     border-bottom-color: #fff;
     position: relative;
+    transform-origin: center;
 }
+@media (orientation: portrait) and (max-width:450px) {
+    .terrain{
+        transform:rotate(90deg) scale(0.8);
+    }
+}
+@media (orientation: landscape) and (max-height:450px) {
+    .terrain{
+        transform:scale(0.8);
+    }
+}
+
 .terrain > *{
     position: absolute;
 }
+.terrain.pause{
+    filter: blur(0px);
+}
+.terrain.pause .balle{
+    background-color: #f00;
+}
 
 .balle{
+    transition: color 2s;
     background-color: #fff;
     width: 10px;
     height: 10px;
     top: 50%;
     left: 50%;
+    border-radius: 100%;
 }
-
 
 .raquette{
     background-color: #fff;
     width: 10px;
     height: 100px;
+    outline: 1px solid black;
+    outline-offset: -1px;
 }
 .raquette.joueur1{
     top:50%;
@@ -59,9 +93,40 @@ body{
     align-items: center;
     font-size: 40px;
     color:#222;
+    transition: color 0.5s;
 }
 .score2{
     left:50%;
+}
+.score.flash{
+    color:#0f0;
+}
+
+.touche{
+    color: #888;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #333;
+    border-radius: 4px;
+    user-select:none;
+}
+.touche.active{
+    color: chocolate;
+}
+.top{
+    top:-15px;
+}
+.left{
+    left:-40px;
+}
+.bottom{
+    bottom:-15px;
+}
+.right{
+    right: -40px;
 }
 
 

@@ -1,21 +1,34 @@
 <html>
     <head>
         <title>PONG</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles/pong.css">
+
     </head>
     <body>
         <div class="terrain">
+            <!-- Les touches juse pour faire joli-->
+            <div class="touche top left"        id="monte1">A</div>
+            <div class="touche bottom left"     id="descend1">Q</div>
+            <div class="touche top right"       id="monte2">P</div>
+            <div class="touche bottom right"    id="descend2">M</div>
+
             <div class="score score1">0</div>
             <div class="score score2">0</div>
+
             <div class="balle"></div>
+            
             <div class="raquette joueur1"></div>
             <div class="raquette joueur2"></div>
 
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://code.createjs.com/1.0.0/soundjs.min.js"></script></head>
+        <script type="text/javascript" src="js/Terrain.js"></script>
         <script type="text/javascript" src="js/Balle.js"></script>
         <script type="text/javascript" src="js/Joueur.js"></script>
+        <script type="text/javascript" src="js/Audio.js"></script>
+        <script type="text/javascript" src="js/Controles.js"></script>
         <script type="text/javascript" src="js/pong.js"></script>
     </body>
 </html>
