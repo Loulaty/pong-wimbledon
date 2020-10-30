@@ -29,14 +29,14 @@ body{
     position: relative;
     transform-origin: center;
 }
-@media (orientation: portrait) and (max-width:450px) {
+
+@media (orientation: landscape) and (max-width:800px) {
     .terrain{
-        transform:rotate(90deg) scale(0.8);
+        width: 600px;
+        height: 300px;
     }
-}
-@media (orientation: landscape) and (max-height:450px) {
-    .terrain{
-        transform:scale(0.8);
+    .raquette{
+        height: 75px;
     }
 }
 
