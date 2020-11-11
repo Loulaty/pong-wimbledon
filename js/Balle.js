@@ -6,6 +6,10 @@
  * gestion des parties gagnées /perdues
  */
 class Balle{
+    /**
+     *
+     * @param {$jQuery} $element Jquery de la balle
+     */
     constructor($element) {
         this.$element=$element;
         /**
@@ -13,21 +17,56 @@ class Balle{
          * @type {Number}
          */
         this.x=this.$element.position().left;
+         /**
+         * Position y de la balle
+         * @type {Number}
+         */
         this.y=this.$element.position().top;
+         /**
+         * Largeur ou hauteur de la balle (c'est pas un ballon de rugby)
+         * @type {Number}
+         */
         this.diametre=this.$element.width();
-
+         /**
+         * selon si -1 ou 1 ira vers la gauche ou vers la droite
+         * @type {Number}
+         */
         this.direction=1;
+         /**
+         * vitesse de déplacement en x qui multipliée par la direction
+         * @type {Number}
+         */
         this.vitesseX=0;
+         /**
+         * vitesse de déplacement en y (ce qui nous donne l'angle)
+         * @type {Number}
+         */
         this.vitesseY=0;
 
-        //sera défini par calcule tailles
+        //seront définis ultérieurement par calculeTailles()
+
+         /**
+         * vitesse de déplacement maximum pour éviter que le jeu devienne injouable
+         * @type {Number}
+         */
         this.vitesseDepart=terrain.largeur/500;
+         /**
+         * vitesse de déplacement maximum pour éviter que le jeu devienne injouable
+         * @type {Number}
+         */
         this.vitesseMax=0;
+         /**
+         * vitesse d'accelération qu'on incrémente à chaque toucher de raquette
+         * @type {Number}
+         */
         this.acceleration=0;
+
+        //c'est parti
         this.calculeTailles();
     }
     /**
      * Calcule certaines propriétés qui sont proportionelles la taille du jeu
+     * Est appelé plus haut quand on redimenssione l'écran et que la taille du jeu change
      */
     calculeTailles(){
         this.vitesseMax=terrain.largeur/100;
@@ -64,7 +103,7 @@ class Balle{
      * Gère les cas de dépassement du terrain et ce que cela induit
      * les rebonds en haut et en bas
      * les touchers de raquettes avec rebonds, effets, accélération et trajectoire déviée
-     * Les cas ou un deux deux joueurs perd
+     * Les cas où un deux deux joueurs perd
      */
     limiteMouvements(){
         //murs en haut et en bas

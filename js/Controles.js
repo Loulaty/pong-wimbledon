@@ -102,7 +102,7 @@ class Controles {
     }
 
     /**
-     * Fait monter le joueur 1
+     * Fait monter le joueur 2
      * @param {boolean} actif 
      */
     monte1(actif) {
