@@ -72,7 +72,7 @@ body{
     background-color: #0f0;
 }
 .raquette.rate-balle{
-    background-color: #f00;
+    background-color: #c16b6b;
 }
 /** effet de couleur **/
 .flash{
@@ -124,9 +124,6 @@ body{
     right: -40px;
 }
 
-
-
-
 .ecran-debut{
     transition: all 3s;
     box-sizing: border-box;
@@ -176,8 +173,6 @@ body{
     border-radius: 4px;
     font-weight: bold;
 }
-
-
 
 @media (orientation:portrait){
     .terrain{
