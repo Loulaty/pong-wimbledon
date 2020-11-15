@@ -1,5 +1,6 @@
 /**
  * Gère la partie audio du projet
+ * @see https://createjs.com/getting-started/soundjs
  */
 class Audio{
     constructor(){
@@ -31,5 +32,4 @@ class Audio{
         this.playNote();
         this.playNote();
     }
-
 }

@@ -1,14 +1,14 @@
 /**
  * Une balle de PONG avec tout ce qui va avec:
  * gestion des rebonds
- * gestion des accelerations
+ * gestion des accélérations
  * gestion des rebonds légèrement différents selon où la balle touche la raquette
  * gestion des parties gagnées /perdues
  */
 class Balle extends ElementHtml{
     /**
      *
-     * @param {$jQuery} $element Jquery de la balle
+     * @param {JQuery<HTMLElement>} $element Jquery de la balle
      */
     constructor($element) {
         super($element);
@@ -46,20 +46,34 @@ class Balle extends ElementHtml{
          */
         this.acceleration=0;
 
+        //c'est parti !
         this.calculePositions();
         this.calculeTailles();
-        //c'est parti
         this.calculeVariablesQuiDependentDeLaTailleDeLEcran();
     }
+
+    /**
+     * Inverse la direction de la balle suite à un rebond haut ou bas
+     */
     inverseDirectionY(){
         this.directionY*=-1;
     }
+    /**
+     * Dis à la balle d'aller vers la gauche
+     */
     vaVersLaGauche(){
         this.directionX=-1;
     }
+    /**
+     * Dis à la balle d'aller vers la droite
+     */
     vaVersLaDroite(){
         this.directionX=1;
     }
+
+    /**
+     * Dis à la balle de ne pas bouger
+     */
     bougePas(){
         this.directionY=0;
         this.directionX=0;
@@ -96,12 +110,11 @@ class Balle extends ElementHtml{
         //facteur=facteur/2;
         //valeur entre -0.25 et 0.25
         facteur=facteur-0.5;
-        console.log(facteur);
         //facteur va influer (et non pas définir) sur la direction.
         this.directionY= (facteur + this.directionY) / 2 ;
     }
     /**
-     * Fait bouger la balle
+     * Fait bouger la balle en fonction des paramètres
      */
     bouge(){
         this.haut += this.vitesse * this.directionY;;

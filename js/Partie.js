@@ -1,5 +1,5 @@
 /**
- * La classe Partie répresente un échange
+ * La classe Partie répresente un échange dans la partie
  */
 class Partie {
     constructor() {
@@ -9,13 +9,17 @@ class Partie {
          * @type {boolean} 
          */
         this.paused = true;
+        /**
+         *
+         * @type {JQuery<HTMLElement>}
+         */
         this.$ecranDebut = $(".ecran-debut");
         this.$btnGo = $(".btn-go");
 
-        this.$btnGo.click(function (e) {
+        this.$btnGo.on("click",function (e) {
             me.demarreNouveauJeu();
             //plein écran
-            $body[0].requestFullscreen();
+            $("body")[0].requestFullscreen();
         });
         //une boucle qui fait tourner notre jeu
         setInterval(() => {
@@ -56,13 +60,14 @@ class Partie {
                 terrain.affichePlay();
                 me.paused = false;
                 balle.gauche = terrain.largeur / 2 - balle.largeur/2;
-                balle.haut = terrain.hauteur / 2 - balle.hauteur/2;;
+                balle.haut = terrain.hauteur / 2 - balle.hauteur/2;
                 balle.vitesse = balle.vitesseDepart;
+
                 //balle.directionY=0.5;
                 if (Math.random() > 0.5) {
                     //balle.inverseDirectionY();
                 }
-                //direction de la balle en aléatoire
+                //direction de la balle gauche droite en aléatoire
                 if (Math.random() > 0.5) {
                     balle.vaVersLaGauche();
                 }else{

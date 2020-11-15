@@ -1,36 +1,43 @@
-let $body = $("body");
+/**
+ * Le terrain
+ * @type {Terrain}
+ */
+let terrain=new Terrain($(".terrain"));
+/**
+ * La balle
+ * @type {Balle}
+ */
+let balle=new Balle($(".balle"));
+/**
+ * Le joueur à gauche
+ * @type {Joueur}
+ */
+let joueur1=new Joueur($(".joueur1"),$(".score1"),$("#monte1"),$("#descend1"));
 
-//le terrain
-let $terrain = $(".terrain");
-let terrain=new Terrain($terrain);
+/**
+ * Le joueur à droite
+ * Pour que ce soit plus lible, on saute des lignes mais c'est pareil que pour joueur 1
+ * @type {Joueur}
+ */
+let joueur2=new Joueur(
+    $(".joueur2"),
+    $(".score2"),
+    $("#monte2"),
+    $("#descend2")
+);
 
-//la balle
-let $balle = $(".balle");
-let balle=new Balle($balle);
-
-//le joueur 1
-let $joueur1 = $(".joueur1");
-let $score1 = $(".score1");
-let joueur1=new Joueur($joueur1,$score1);
-
-//le joueur 2
-let $joueur2 = $(".joueur2");
-let $score2 = $(".score2");
-let joueur2=new Joueur($joueur2,$score2);
-
-//définit les adversaires pour l'attribution de points
-joueur1.adversaire=joueur2;
-joueur2.adversaire=joueur1;
-
-//gèere les controlles utilisateur, clavier, tactile...
+/**
+ * Gère les inerractions utilisateurs (les mamifères qui jouent au jeu), clavier, tactile...
+ * @type {Controles}
+ */
 let controles=new Controles();
-
-//un peu de musique ?
+/**
+ * un peu de musique ?
+ * @type {Audio}
+ */
 let audio=new Audio();
-
-//contrôle la partie, pause, écran de demarage etc...
+/**
+ * contrôle la partie, pause, écran de démarrage etc...
+ * @type {Partie}
+ */
 let partie=new Partie();
-
-
-
-

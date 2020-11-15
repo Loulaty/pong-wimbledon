@@ -1,66 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SPLITTER_PROPORTION" value="0.44494107" />
+    <option name="SCOPE_TYPE" value="8" />
+    <option name="CUSTOM_SCOPE_NAME" value="Project Files" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="08c29465-9b7b-40aa-944c-9b68c56a7dbe" name="Default Changelist" comment="">
+    <list default="true" id="cfb8edd4-3248-4cdb-8dba-8c90b5de0281" name="Default Changelist" comment="chemin vers un code plus élégant">
+      <change beforePath="$PROJECT_DIR$/.idea/pong-jquery.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pong-jquery.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Audio.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Audio.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/Balle.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Balle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/Controles.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Controles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ElementHtml.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ElementHtml.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Joueur.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Joueur.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Partie.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Partie.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/pong.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pong.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/pong.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/pong.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
-    <execution />
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1jY5A2zpVRPKLl7B0VjM3LUS2OB" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="1kJUDBvTqX5NdRlMcm92IWZmO0G" />
   <component name="ProjectViewState">
-    <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="screenshoter" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="08c29465-9b7b-40aa-944c-9b68c56a7dbe" name="Default Changelist" comment="" />
-      <created>1603968040004</created>
+      <changelist id="cfb8edd4-3248-4cdb-8dba-8c90b5de0281" name="Default Changelist" comment="" />
+      <created>1605418066982</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1603968040004</updated>
-      <workItem from="1603968042039" duration="340000" />
-      <workItem from="1604011749866" duration="602000" />
-      <workItem from="1604046594141" duration="437000" />
-      <workItem from="1605081254781" duration="1431000" />
+      <updated>1605418066982</updated>
+      <workItem from="1605418068367" duration="11657000" />
     </task>
+    <task id="LOCAL-00001" summary="chemin vers un code plus élégant">
+      <created>1605418227308</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1605418227308</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="chemin vers un code plus élégant" />
+    <option name="LAST_COMMIT_MESSAGE" value="chemin vers un code plus élégant" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="639" y="-959" key="#Notifications" timestamp="1605081458926">
+    <state x="675" y="-886" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1605427140819">
       <screen x="-351" y="-1440" width="2560" height="1400" />
     </state>
-    <state x="639" y="-959" key="#Notifications/0.0.1920.1040/-351.-1440.2560.1400@-351.-1440.2560.1400" timestamp="1605081458926" />
-    <state x="320" y="-1182" key="SettingsEditor" timestamp="1605081868407">
+    <state x="675" y="-886" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/-351.-1440.2560.1400@-351.-1440.2560.1400" timestamp="1605427140819" />
+    <state x="-259" y="-1348" width="2376" height="1216" key="DiffContextDialog" timestamp="1605418491747">
       <screen x="-351" y="-1440" width="2560" height="1400" />
     </state>
-    <state x="320" y="-1182" key="SettingsEditor/0.0.1920.1040/-351.-1440.2560.1400@-351.-1440.2560.1400" timestamp="1605081868407" />
-    <state x="-127" y="-1217" width="1936" height="1141" maximized="true" key="dock-window-1" timestamp="1605082306168">
+    <state x="-259" y="-1348" width="2376" height="1216" key="DiffContextDialog/0.0.1920.1040/-351.-1440.2560.1400@-351.-1440.2560.1400" timestamp="1605418491747" />
+    <state x="343" y="-1075" key="SettingsEditor" timestamp="1605431024030">
       <screen x="-351" y="-1440" width="2560" height="1400" />
     </state>
-    <state x="-127" y="-1217" width="1936" height="1141" maximized="true" key="dock-window-1/0.0.1920.1040/-351.-1440.2560.1400@-351.-1440.2560.1400" timestamp="1605082306168" />
+    <state x="343" y="-1075" key="SettingsEditor/0.0.1920.1040/-351.-1440.2560.1400@-351.-1440.2560.1400" timestamp="1605431024030" />
+    <state x="521" y="-1021" key="Vcs.Push.Dialog.v2" timestamp="1605418230837">
+      <screen x="-351" y="-1440" width="2560" height="1400" />
+    </state>
+    <state x="521" y="-1021" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-351.-1440.2560.1400@-351.-1440.2560.1400" timestamp="1605418230837" />
   </component>
 </project>
