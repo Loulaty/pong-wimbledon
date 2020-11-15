@@ -44,26 +44,27 @@ body{
 .balle{
     transition: color 2s;
     background-color: #fff;
-    width: 10px;
-    height: 10px;
-    top: 50%;
-    left: 50%;
+    --diamettre:20px;
+    width: var(--diamettre);
+    height: var(--diamettre);
+    top: calc( 50% - var(--diamettre) / 2 );
+    left: calc( 50% - var(--diamettre) / 2 );
     border-radius: 100%;
 }
 
 .raquette{
+    --hauteur:25%;
     background-color: #fff;
     width: 10px;
-    height: 30%;
+    height:var(--hauteur);
     outline: 1px solid black;
     outline-offset: -1px;
+    top:calc( 50% - var(--hauteur) / 2  );
 }
 .raquette.joueur1{
-    top:50%;
     left: 0px;
 }
 .raquette.joueur2{
-    top:50%;
     right: 0px;
 }
 

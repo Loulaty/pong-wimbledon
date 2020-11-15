@@ -4,10 +4,6 @@
 class Controles {
     constructor() {
 
-        this.$monte1 = $("#monte1");
-        this.$descend1 = $("#descend1");
-        this.$monte2 = $("#monte2");
-        this.$descend2 = $("#descend2");
         let me = this;
 
         //quand on appuie sur une touche du clavier
@@ -17,19 +13,16 @@ class Controles {
             }
             switch (event.key) {
                 case "a":
-                    me.monte1(true)
+                    joueur1.monte();
                     break;
-
                 case "q":
-                    me.descend1(true);
+                    joueur1.descend();
                     break;
-
                 case "p":
-                    me.monte2(true)
+                    joueur2.monte();
                     break;
-
                 case "m":
-                    me.descend2(true);
+                    joueur2.descend();
                     break;
             }
             event.preventDefault();
@@ -42,115 +35,59 @@ class Controles {
             }
             switch (event.key) {
                 case "a":
-                    me.monte1(false)
-                    break;
                 case "q":
-                    me.descend1(false);
+                    joueur1.bougePas()
                     break;
                 case "p":
-                    me.monte2(false)
-                    break;
                 case "m":
-                    me.descend2(false);
+                    joueur2.bougePas()
                     break;
             }
             event.preventDefault();
         }, true);
 
-
+        this.$monte1 = $("#monte1");
+        this.$descend1 = $("#descend1");
+        this.$monte2 = $("#monte2");
+        this.$descend2 = $("#descend2");
 
         this.$monte1.on("mousedown touchstart", function (e) {
             e.preventDefault();
-            me.monte1(true);
+            joueur1.monte();
         });
         this.$monte1.on("mouseup touchend", function (e) {
             e.preventDefault();
-            me.monte1(false);
+            joueur1.bougePas()
         });
         this.$monte2.on("mousedown touchstart", function (e) {
             e.preventDefault();
-            me.monte2(true);
+            joueur2.monte();
         });
         this.$monte2.on("mouseup touchend", function (e) {
             e.preventDefault();
-            me.monte2(false);
+            joueur2.bougePas();
         });
 
         this.$descend1.on("mousedown touchstart", function (e) {
             e.preventDefault();
-            me.descend1(true);
+            joueur1.descend();
         });
         this.$descend1.on("mouseup touchend", function (e) {
             e.preventDefault();
-            me.descend1(false);
+            joueur1.bougePas();
         });
         this.$descend2.on("mousedown touchstart", function (e) {
             e.preventDefault();
-            me.descend2(true);
+            joueur2.descend();
         });
         this.$descend2.on("mouseup touchend", function (e) {
             e.preventDefault();
-            me.descend2(false);
+            joueur2.bougePas();
         });
 
-        $body[0].addEventListener("touchmove", 
-            function(e){
-            console.log(e)
-            }
-        , false);
-
-    }
-
-    /**
-     * Fait monter le joueur 2
-     * @param {boolean} actif 
-     */
-    monte1(actif) {
-        if (actif) {
-            this.$monte1.addClass("active");
-        } else {
-            this.$monte1.removeClass("active");
-        }
-        joueur1.monte = actif;
-    }
-     /**
-     * Fait monter le joueur 2
-     * @param {boolean} actif 
-     */
-    monte2(actif) {
-        if (actif) {
-            this.$monte2.addClass("active");
-        } else {
-            this.$monte2.removeClass("active");
-        }
-        joueur2.monte = actif;
-    }
-    /**
-    * Fait descendre le joueur 1
-    * @param {boolean} actif 
-    */
-    descend1(actif) {
-        if (actif) {
-            this.$descend1.addClass("active");
-        } else {
-            this.$descend1.removeClass("active");
-        }
-        joueur1.descend = actif;
-    }
-    /**
-    * Fait descendre le joueur 2
-    * @param {boolean} actif 
-    */
-    descend2(actif) {
-        if (actif) {
-            this.$descend2.addClass("active");
-        } else {
-            this.$descend2.removeClass("active");
-        }
-        joueur2.descend = actif;
-    }
-
     
+
+    }
 
 
 }

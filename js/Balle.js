@@ -5,43 +5,28 @@
  * gestion des rebonds légèrement différents selon où la balle touche la raquette
  * gestion des parties gagnées /perdues
  */
-class Balle{
+class Balle extends ElementHtml{
     /**
      *
      * @param {$jQuery} $element Jquery de la balle
      */
     constructor($element) {
-        this.$element=$element;
-        /**
-         * Position x de la balle
-         * @type {Number}
-         */
-        this.x=this.$element.position().left;
-         /**
-         * Position y de la balle
-         * @type {Number}
-         */
-        this.y=this.$element.position().top;
-         /**
-         * Largeur ou hauteur de la balle (c'est pas un ballon de rugby)
-         * @type {Number}
-         */
-        this.diametre=this.$element.width();
+        super($element);
          /**
          * selon si -1 ou 1 ira vers la gauche ou vers la droite
          * @type {Number}
          */
-        this.direction=1;
+        this.directionX=0;
          /**
-         * vitesse de déplacement en x qui multipliée par la direction
+         * selon si -1 ou 1 ira vers le haut ou vers le bas
          * @type {Number}
          */
-        this.vitesseX=0;
+        this.directionY=0;
          /**
-         * vitesse de déplacement en y (ce qui nous donne l'angle)
+         * vitesse de déplacement en x et y qui sera impactée par directionX et directionY
          * @type {Number}
          */
-        this.vitesseY=0;
+        this.vitesse=0;
 
         //seront définis ultérieurement par calculeTailles()
 
@@ -49,7 +34,7 @@ class Balle{
          * vitesse de déplacement maximum pour éviter que le jeu devienne injouable
          * @type {Number}
          */
-        this.vitesseDepart=terrain.largeur/500;
+        this.vitesseDepart=0;
          /**
          * vitesse de déplacement maximum pour éviter que le jeu devienne injouable
          * @type {Number}
@@ -61,25 +46,43 @@ class Balle{
          */
         this.acceleration=0;
 
-        //c'est parti
+        this.calculePositions();
         this.calculeTailles();
+        //c'est parti
+        this.calculeVariablesQuiDependentDeLaTailleDeLEcran();
     }
+    inverseDirectionY(){
+        this.directionY*=-1;
+    }
+    vaVersLaGauche(){
+        this.directionX=-1;
+    }
+    vaVersLaDroite(){
+        this.directionX=1;
+    }
+    bougePas(){
+        this.directionY=0;
+        this.directionX=0;
+    }
+
+
     /**
-     * Calcule certaines propriétés qui sont proportionelles la taille du jeu
-     * Est appelé plus haut quand on redimenssione l'écran et que la taille du jeu change
+     * Calcule certaines propriétés qui sont proportionelles à la taille du jeu
+     * Est appelé plus haut quand on redimensionne l'écran et que la taille du jeu change
      */
-    calculeTailles(){
+    calculeVariablesQuiDependentDeLaTailleDeLEcran(){
         this.vitesseMax=terrain.largeur/100;
-        this.acceleration=terrain.largeur / 1000;
+        this.acceleration=terrain.largeur / 2000;
+        this.vitesseDepart=terrain.largeur/500;
     }
     /**
      * accelère la balle (avec une petite limite quand même)
      */
     accelere(){
-        if (this.vitesseX < this.vitesseMax) {
-            this.vitesseX = this.vitesseX + this.acceleration;
+        if (this.vitesse < this.vitesseMax) {
+            this.vitesse += this.acceleration;
         }else{
-            this.vitesseX = this.vitesseMax
+            this.vitesse = this.vitesseMax
         }
     }
      /**
@@ -87,64 +90,74 @@ class Balle{
      * @param {Joueur} joueur 
      */
     devieDirection(joueur){
-        let facteur = (   this.y - (joueur.y + joueur.hauteur / 2) ) / (joueur.hauteur / 2);
-        this.vitesseY= this.vitesseY  + (facteur * 0.75);
+        //valeur entre 0 et 1
+        let facteur = (this.bas - joueur.haut) / (joueur.hauteur+this.hauteur); 
+        //valeur entre 0 et 0.5
+        //facteur=facteur/2;
+        //valeur entre -0.25 et 0.25
+        facteur=facteur-0.5;
+        console.log(facteur);
+        //facteur va influer (et non pas définir) sur la direction.
+        this.directionY= (facteur + this.directionY) / 2 ;
     }
     /**
      * Fait bouger la balle
      */
     bouge(){
-        this.y = this.y + this.vitesseY;
-        this.x = this.x + ( this.vitesseX * this.direction );
-        this.limiteMouvements();
-        this.rafraichitHTML();
+        this.haut += this.vitesse * this.directionY;;
+        this.gauche += this.vitesse * this.directionX;
+        this._limiteMouvements();
+        this._rafraichitHTML();
     }
     /**
      * Gère les cas de dépassement du terrain et ce que cela induit
      * les rebonds en haut et en bas
      * les touchers de raquettes avec rebonds, effets, accélération et trajectoire déviée
      * Les cas où un deux deux joueurs perd
+     * @private
      */
-    limiteMouvements(){
+    _limiteMouvements(){
         //murs en haut et en bas
-        if (this.y < 0 || this.y + this.diametre > terrain.hauteur) {
+        if (this.haut < terrain.haut || this.bas > terrain.bas) {
             //inverse la direction Y
-            this.vitesseY = this.vitesseY * -1.0;
-            this.y += this.vitesseY;
+            this.inverseDirectionY();
+            this.haut += this.vitesse * this.directionY;
             audio.playNote();
         }
+       
         //raquettes
-        if (this.toucheJoueur1() || this.toucheJoueur2()) {
+        if (this._toucheJoueur1() || this._toucheJoueur2()) {
 
-            if(this.toucheJoueur1()){
+            if(this._toucheJoueur1()){
                 joueur1.effetToucheBalle();
                 this.devieDirection(joueur1);
+                this.vaVersLaDroite();
             }
-            if(this.toucheJoueur2()){
+            if(this._toucheJoueur2()){
                 joueur2.effetToucheBalle();
                 this.devieDirection(joueur2);
+                this.vaVersLaGauche();
             }
-            //inverse la direction X
-            this.direction = this.direction * -1.0;
-            this.x += this.vitesseX * this.direction;
+            this.gauche += this.vitesse * this.directionX;
             //si on touche une raquette on accélère la balle
             this.accelere();
         }
         //perdu ?
-        if(this.toucheCoteGauche()){
+        if(this._toucheCoteGauche()){
             joueur2.gagne();
         }
-        if(this.toucheCoteDroite()){
+        if(this._toucheCoteDroite()){
             joueur1.gagne();
         }
     }
      /**
      * Renvoie true si la balle touche le joueur 1
+     * @private
      * @returns {boolean} 
      */
-    toucheJoueur1(){
-        if(this.x < joueur1.x+joueur1.largeur){
-            if(this.y + this.diametre >joueur1.y && this.y < joueur1.y+joueur1.hauteur){
+    _toucheJoueur1(){
+        if(this.gauche < joueur1.droite){
+            if(this.bas > joueur1.haut && this.haut < joueur1.bas){
                 return true;
             }
         }
@@ -152,11 +165,12 @@ class Balle{
     }
      /**
      * Renvoie true si la balle touche le joueur 2
+     * @private
      * @returns {boolean} 
      */
-    toucheJoueur2(){
-        if(this.x + this.diametre > joueur2.x){
-            if(this.y + this.diametre > joueur2.y && this.y < joueur2.y+joueur2.hauteur){
+    _toucheJoueur2(){
+        if(this.droite > joueur2.gauche){
+            if(this.bas > joueur2.haut && this.haut < joueur2.bas){
                 return true;
             }
         }
@@ -164,10 +178,11 @@ class Balle{
     }
      /**
      * Renvoie true si la balle touche la gauche du terrain
+     * @private
      * @returns {boolean} 
      */
-    toucheCoteGauche(){
-        if(this.x < 0){
+    _toucheCoteGauche(){
+        if(this.gauche < terrain.gauche){
             return true;
         }else{
             return false;
@@ -175,18 +190,21 @@ class Balle{
     }
     /**
      * Renvoie true si la balle touche la droite du terrain
+     * @private
      * @returns {boolean} 
      */
-    toucheCoteDroite(){
+    _toucheCoteDroite(){
         //juste pour l'anecdote... c'est une version plus élégante de toucheGauche()
-        return this.x + this.diametre > terrain.largeur;
+        return this.droite > terrain.droite;
     }
     /**
-     * applique les positions theoriques à l'écran
+     * Applique les valeurs en CSS
+     * @private
      */
-    rafraichitHTML(){
-        this.$element.css("top", this.y);
-        this.$element.css("left", this.x);
+    _rafraichitHTML(){
+        this.$element.css("top", this.haut); 
+        this.$element.css("left", this.gauche);
     }
+
 
 }

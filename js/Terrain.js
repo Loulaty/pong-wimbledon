@@ -1,13 +1,7 @@
-class Terrain{
+class Terrain extends ElementHtml{
     constructor($element){
-        this.$element=$element;
-        this.hauteur=0;
-        this.largeur=0;
+        super($element);
         this.calculeTailles();
-    }
-    calculeTailles(){
-        this.hauteur=this.$element.height();
-        this.largeur=this.$element.width();
     }
     affichePause(){
         this.$element.addClass("pause")

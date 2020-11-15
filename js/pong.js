@@ -28,7 +28,7 @@ let controles=new Controles();
 //un peu de musique ?
 let audio=new Audio();
 
-//controle la partie, pause, écran de demarage etc...
+//contrôle la partie, pause, écran de demarage etc...
 let partie=new Partie();
 
 
