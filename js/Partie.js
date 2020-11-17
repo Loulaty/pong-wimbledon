@@ -10,13 +10,18 @@ class Partie {
          */
         this.paused = true;
         /**
-         *
+         * L'écran qui s'affiche au début de la partie avec les instuctions
          * @type {JQuery<HTMLElement>}
          */
         this.$ecranDebut = $(".ecran-debut");
+        /**
+         * Le bouton pour démarrer une partie
+         * @type {JQuery<HTMLElement>}
+         */
         this.$btnGo = $(".btn-go");
 
         this.$btnGo.on("click",function (e) {
+            e.preventDefault();
             me.demarreNouveauJeu();
             //plein écran
             $("body")[0].requestFullscreen();
@@ -63,10 +68,12 @@ class Partie {
                 balle.haut = terrain.hauteur / 2 - balle.hauteur/2;
                 balle.vitesse = balle.vitesseDepart;
 
-                //balle.directionY=0.5;
+                //Angle de direction de la balle en aléatoire
+                balle.directionY=Math.random() * 0.3;
                 if (Math.random() > 0.5) {
-                    //balle.inverseDirectionY();
+                    balle.inverseDirectionY();
                 }
+
                 //direction de la balle gauche droite en aléatoire
                 if (Math.random() > 0.5) {
                     balle.vaVersLaGauche();

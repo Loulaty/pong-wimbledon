@@ -16,7 +16,7 @@ let joueur1=new Joueur($(".joueur1"),$(".score1"),$("#monte1"),$("#descend1"));
 
 /**
  * Le joueur à droite
- * Pour que ce soit plus lible, on saute des lignes mais c'est pareil que pour joueur 1
+ * Ici, pour que ce soit plus lisible, on saute des lignes mais c'est pareil que pour joueur 1
  * @type {Joueur}
  */
 let joueur2=new Joueur(

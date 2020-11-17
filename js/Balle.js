@@ -117,7 +117,7 @@ class Balle extends ElementHtml{
      * Fait bouger la balle en fonction des paramètres
      */
     bouge(){
-        this.haut += this.vitesse * this.directionY;;
+        this.haut += this.vitesse * this.directionY;
         this.gauche += this.vitesse * this.directionX;
         this._limiteMouvements();
         this._rafraichitHTML();
@@ -195,6 +195,7 @@ class Balle extends ElementHtml{
      * @returns {boolean} 
      */
     _toucheCoteGauche(){
+        //pour voir une version plus jolie de ce code regardez _toucheCoteDroite()
         if(this.gauche < terrain.gauche){
             return true;
         }else{

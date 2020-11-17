@@ -85,7 +85,7 @@ class ElementHtml {
 
     /**
      * Ajoute une classe css à l'élément et l'enlève juste après
-     * @param {jQuery} $element
+     * @param {JQuery<HTMLElement>} $element
      * @param {string} classeCss
      */
     static effetCss($element, classeCss) {
