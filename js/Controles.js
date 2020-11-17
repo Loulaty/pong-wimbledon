@@ -6,7 +6,6 @@ class Controles {
         //c'est parti !
         this._ecouteBoutons();
         this._ecouteClavier();
-
     }
 
     _ecouteClavier(){

@@ -169,9 +169,12 @@ class Balle extends ElementHtml{
      * @returns {boolean} 
      */
     _toucheJoueur1(){
+        //pour une version alternative de ce code regardez _toucheJoueur2()
         if(this.gauche < joueur1.droite){
-            if(this.bas > joueur1.haut && this.haut < joueur1.bas){
-                return true;
+            if(this.bas > joueur1.haut){
+                if(this.haut < joueur1.bas){
+                    return true;
+                }
             }
         }
         return false;
@@ -182,12 +185,8 @@ class Balle extends ElementHtml{
      * @returns {boolean} 
      */
     _toucheJoueur2(){
-        if(this.droite > joueur2.gauche){
-            if(this.bas > joueur2.haut && this.haut < joueur2.bas){
-                return true;
-            }
-        }
-        return false;
+         //pour une version alternative (plus lisible mais plus longue) de ce code regardez _toucheJoueur1()
+        return this.droite > joueur2.gauche && (this.bas > joueur2.haut && this.haut < joueur2.bas);
     }
      /**
      * Renvoie true si la balle touche la gauche du terrain
@@ -208,7 +207,7 @@ class Balle extends ElementHtml{
      * @returns {boolean} 
      */
     _toucheCoteDroite(){
-        //juste pour l'anecdote... c'est une version plus élégante de toucheGauche()
+        //c'est une version plus élégante de toucheGauche()
         return this.droite > terrain.droite;
     }
     /**
