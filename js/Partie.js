@@ -5,7 +5,7 @@ class Partie {
     constructor() {
         let me=this;
         /**
-         * La partie est elle en pause ou non
+         * La partie est elle en pause ou non ?
          * @type {boolean} 
          */
         this._enPause = true;
