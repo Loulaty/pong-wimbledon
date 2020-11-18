@@ -16,20 +16,24 @@ class Audio{
     }
     /**
      * Joue une note de piano aléatoire
+     * todo réactiver
      */
     playNote(){
         let notes=["do","re","mi","fa","sol","la","si"];
         let note =notes[Math.floor(Math.random() * notes.length)];
-        createjs.Sound.play(note);
+        //createjs.Sound.play(note);
     }
     /**
      * Joue plusieurs notes ce qui produit un truc assez pété
+     * todo réactiver
      */
     fausseNote(){
+        /*
         this.playNote();
         this.playNote();
         this.playNote();
         this.playNote();
         this.playNote();
+        */
     }
 }

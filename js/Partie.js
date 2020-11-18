@@ -20,8 +20,9 @@ class Partie {
             e.preventDefault();
             me.demarreNouveauJeu();
             //plein écran
-            $("body")[0].requestFullscreen();
+            //$("body")[0].requestFullscreen();
         });
+        me.demarreNouveauJeu();
         //une boucle qui fait tourner notre jeu
         setInterval(() => {
             joueur1.bouge();
