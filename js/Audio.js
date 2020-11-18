@@ -1,8 +1,8 @@
-/**
- * Gère la partie audio du projet
- * @see https://createjs.com/getting-started/soundjs
- */
 class Audio{
+    /**
+     * Gère la partie audio du projet
+     * @see https://createjs.com/getting-started/soundjs
+     */
     constructor(){
         //sounds
         createjs.Sound.registerSound("sound/do.mp3", "do");

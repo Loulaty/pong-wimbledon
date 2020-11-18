@@ -1,13 +1,16 @@
-/**
- * Gère les entrées interactives (clavier, souris, touch tactile etc...)
- */
 class Controles {
+    /**
+     * Gère les entrées interactives (clavier, souris, touch tactile etc...)
+     */
     constructor() {
         //c'est parti !
         this._ecouteBoutons();
         this._ecouteClavier();
     }
-
+    /**
+     * Méthode pour commencer à écouter le clavier
+     * @private
+     */
     _ecouteClavier(){
         //quand on appuie sur une touche du clavier
         window.addEventListener("keydown", function (event) {
@@ -55,7 +58,7 @@ class Controles {
      */
     _ecouteBoutons(){
 
-        // on va utiliser plusieurs styles de code pour faire la même chose...
+        // on va utiliser plusieurs styles de code pour faire à peu près la même chose...
 
         // 1 la méthode la plus simple, la plus lisible pour un débutant, mais aussi la plus longue si on veut gérer plein de touches à la fois
 
@@ -134,10 +137,6 @@ class Controles {
                     joueur.bougePas();
                     break;
             }
-
         });
-
     }
-
-
 }

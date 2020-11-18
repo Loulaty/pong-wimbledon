@@ -1,19 +1,15 @@
-/**
- * La classe Partie répresente un échange dans la partie
- */
 class Partie {
+    /**
+     * La classe Partie répresente un échange dans la partie
+     */
     constructor() {
         let me=this;
         /**
          * La partie est elle en pause ou non
          * @type {boolean} 
          */
-        this.paused = true;
-        /**
-         * L'écran qui s'affiche au début de la partie avec les instuctions
-         * @type {JQuery<HTMLElement>}
-         */
-        this.$ecranDebut = $(".ecran-debut");
+        this._enPause = true;
+
         /**
          * Le bouton pour démarrer une partie
          * @type {JQuery<HTMLElement>}
@@ -30,7 +26,7 @@ class Partie {
         setInterval(() => {
             joueur1.bouge();
             joueur2.bouge();
-            if (!me.paused) {
+            if (!me._enPause) {
                 balle.bouge();
             }
         }, 10);
@@ -52,37 +48,38 @@ class Partie {
      * Masque l'écran de début, fait une pause de 3 secondes et lance la balle !
      */
     demarreNouveauJeu() {
-        //masque ecran de début
-        this.$ecranDebut.addClass("invisible");
-        this.paused = true;
+        terrain.masqueEcranDebut();
+        this.enPause = true;
         balle.bougePas();
-        //balle devient rouge
-        terrain.affichePause();
         let me = this;
         //stope pendant 3 secondes
         setTimeout(
             function () {
-                terrain.affichePlay();
-                me.paused = false;
-                balle.gauche = terrain.largeur / 2 - balle.largeur/2;
-                balle.haut = terrain.hauteur / 2 - balle.hauteur/2;
-                balle.vitesse = balle.vitesseDepart;
-
-                //Angle de direction de la balle en aléatoire
-                balle.directionY=Math.random() * 0.3;
-                if (Math.random() > 0.5) {
-                    balle.inverseDirectionY();
-                }
-
-                //direction de la balle gauche droite en aléatoire
-                if (Math.random() > 0.5) {
-                    balle.vaVersLaGauche();
-                }else{
-                    balle.vaVersLaDroite();
-                }
+                me.enPause = false;
+                balle.reinitialiser();
             },
             3000
         );
+    }
 
+    /**
+     * Savoir si la partie est en pause
+     * @returns {boolean}
+     */
+    get enPause() {
+        return this._enPause;
+    }
+
+    /**
+     * Définir si la partie est en pause
+     * @param {boolean} value
+     */
+    set enPause(value) {
+        this._enPause = value;
+        if(this._enPause){
+            terrain.affichePause();
+        }else{
+            terrain.affichePlay();
+        }
     }
 }

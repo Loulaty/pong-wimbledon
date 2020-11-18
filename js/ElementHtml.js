@@ -1,9 +1,8 @@
-/**
- * La classe ElementHtml comme son nom l'indique est une classe qui reflète un élément HTML.
- * Cette classe n'est pas faite pour être utiliséee tel quel mais pour être éténdue (voir Balle, Raquette et Joueur)
- */
+
 class ElementHtml {
     /**
+     * La classe ElementHtml comme son nom l'indique est une classe qui reflète un élément HTML.
+     * Cette classe n'est pas faite pour être utiliséee tel quel mais pour être éténdue (voir Balle, Raquette et Joueur)
      *
      * @param {JQuery<HTMLElement>} $element HTML Jquery principal auquel se réfèrent la hauteur, largeur etc...
      */
