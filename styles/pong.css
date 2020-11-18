@@ -2,9 +2,15 @@ html{
     margin: 0;
     padding:0;
     overflow: hidden;
+    --couleur-fond:#000;
+    --couleur-elements:#FFF;
+    --couleur-on-sait-pas-trop:#808080;
+    --couleur-on-sait-pas-trop-foncee:#222;
+    --couleur-erreur:#F00;
+    --couleur-succes:#0f0;
 }
 body{
-    background-color: #000000;
+    background-color: var(--couleur-fond);
     color: #ffffff;
     font-family: monospace;
     display: flex;
@@ -23,9 +29,9 @@ body{
     width:90vmin;
     height: 45vmin;
     flex-shrink: 0;
-    border: 1px solid #000;
-    border-top-color: #fff;
-    border-bottom-color: #fff;
+    border: 1px solid transparent;
+    border-top-color: var(--couleur-elements);
+    border-bottom-color: var(--couleur-elements);
     position: relative;
     transform-origin: center;
     max-height: 90vh;
@@ -38,7 +44,7 @@ body{
     filter: blur(0px);
 }
 .terrain.pause .balle{
-    background-color: #f00;
+    background-color: var(--couleur-erreur);
 }
 
 .balle{
@@ -57,7 +63,7 @@ body{
     background-color: #fff;
     width: 10px;
     height:var(--hauteur);
-    outline: 1px solid black;
+    outline: 1px solid var(--couleur-fond);
     outline-offset: -1px;
     top:calc( 50% - var(--hauteur) / 2  );
 }
@@ -72,11 +78,11 @@ body{
     background-color: #0f0;
 }
 .raquette.rate-balle{
-    background-color: #c16b6b;
+    background-color: var(--couleur-erreur);
 }
-/** effet de couleur **/
+/** effet de couleur qui peut être utilisé à plusieurs endroits **/
 .flash{
-    color:#0f0 !important;
+    color:var(--couleur-succes) !important;
 }
 
 /** les scores des joueurs **/
@@ -89,7 +95,8 @@ body{
     justify-content: center;
     align-items: center;
     font-size: 40px;
-    color:#222;
+    color:var(--couleur-elements);
+    opacity: 0.2;
     transition: color 0.5s;
 }
 .score2{
@@ -98,15 +105,15 @@ body{
 
 
 
-/** les boutons qui sympolisent les touches du clavier **/
+/** les boutons qui symbolisent les touches du clavier **/
 .touche{
-    color: #888;
+    color: var(--couleur-on-sait-pas-trop);
     display: flex;
     width: 30px;
     height: 30px;
     justify-content: center;
     align-items: center;
-    border: 1px solid #333;
+    border: 1px solid var(--couleur-on-sait-pas-trop-foncee);
     border-radius: 4px;
     user-select:none;
 }
@@ -166,8 +173,8 @@ body{
 
 /* un simple bouton (utilisé uniquement sur l'écran de début) */
 .btn{
-    color: #000;
-    background-color: #fff;
+    color: var(--couleur-fond);
+    background-color:var(--couleur-elements);
     padding: 5px 10px;
     text-decoration: none;
     border-radius: 4px;
