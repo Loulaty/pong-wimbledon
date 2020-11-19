@@ -5,6 +5,10 @@ class Audio{
      */
     constructor(){
         //sounds
+
+        //createjs.Sound.registerSound("sound/pong.wav", "pong");
+
+        /*
         createjs.Sound.registerSound("sound/do.mp3", "do");
         createjs.Sound.registerSound("sound/re.mp3", "re");
         createjs.Sound.registerSound("sound/mi.mp3", "mi");
@@ -12,22 +16,45 @@ class Audio{
         createjs.Sound.registerSound("sound/sol.mp3","sol");
         createjs.Sound.registerSound("sound/la.mp3", "la");
         createjs.Sound.registerSound("sound/si.mp3", "si");
-        //createjs.Sound.registerSound("sound/pong.mp3", "pong");
+         */
+
+        /*
+        createjs.Sound.registerSound("sound/pong1.wav", "pong1");
+        createjs.Sound.registerSound("sound/pong2.wav", "pong2");
+        createjs.Sound.registerSound("sound/pong3.wav", "pong3");
+        createjs.Sound.registerSound("sound/pong4.wav", "pong4");
+         */
+
+        createjs.Sound.registerSound("sound/ping1.wav", "pong1");
+        createjs.Sound.registerSound("sound/ping2.wav", "pong2");
+        createjs.Sound.registerSound("sound/ping3.wav", "pong3");
+        createjs.Sound.registerSound("sound/ping4.wav", "pong4");
+
+        createjs.Sound.registerSound("sound/disappointment.wav", "disappointment");
+
+
+
     }
     /**
-     * Joue une note de piano aléatoire
-     * todo réactiver
+     * Joue une note aléatoirepa
      */
     playNote(){
-        let notes=["do","re","mi","fa","sol","la","si"];
+        //let notes=["do","re","mi","fa","sol","la","si"];
+        let notes=[
+            "pong1"
+            ,"pong2"
+            ,"pong3"
+            ,"pong4"
+        ];
         let note =notes[Math.floor(Math.random() * notes.length)];
-        //createjs.Sound.play(note);
+        createjs.Sound.play(note);
+
     }
     /**
-     * Joue plusieurs notes ce qui produit un truc assez pété
-     * todo réactiver
+     * Perdu
      */
     fausseNote(){
+        createjs.Sound.play("disappointment");
         /*
         this.playNote();
         this.playNote();

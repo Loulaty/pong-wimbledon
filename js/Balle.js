@@ -125,7 +125,7 @@ class Balle extends ElementHtml {
     calculeVariablesQuiDependentDeLaTailleDeLEcran() {
         this.vitesseMax = terrain.largeur / 100;
         this.acceleration = terrain.largeur / 2000;
-        this.vitesseDepart = terrain.largeur / 500;
+        this.vitesseDepart = terrain.largeur / 400;
     }
     /**
      * accelère la balle (avec une petite limite quand même)
@@ -147,10 +147,10 @@ class Balle extends ElementHtml {
     _devieDirection(joueur) {
         //valeur entre 0 et 1
         let facteur = (this.bas - joueur.haut) / (joueur.hauteur + this.hauteur);
-        //valeur entre 0 et 0.5
-        //facteur=facteur/2;
-        //valeur entre -0.25 et 0.25
+        //valeur entre -0.5 et 0.5
         facteur = facteur - 0.5;
+        //valeur entre -1 et 1
+        facteur*=2;
         //facteur va influer (et non pas définir) sur la direction.
         this.directionY = (facteur + this.directionY) / 2;
     }

@@ -23,12 +23,27 @@ class Partie {
             //$("body")[0].requestFullscreen();
         });
         me.demarreNouveauJeu();
+        /**
+         * Liste des personnages dans le bublic
+         * @type {Perso[]}
+         */
+        this.persos=[];
+        // construit tous les Peso
+        $(".perso").each(function(){
+            let p=new Perso($(this));
+            me.persos.push(p);
+        });
+
         //une boucle qui fait tourner notre jeu
         setInterval(() => {
             joueur1.bouge();
             joueur2.bouge();
             if (!me._enPause) {
                 balle.bouge();
+            }
+            if(Math.random()>0.996){
+                let persoAleatoire=me.persos[Math.floor(Math.random() * me.persos.length)];
+                persoAleatoire.parle(persoAleatoire.motAleatoire);
             }
         }, 10);
         //une boucle toutes les 3 secondes qui recalculte les positions et dimenssions au cas où l'écran change de tailleaa

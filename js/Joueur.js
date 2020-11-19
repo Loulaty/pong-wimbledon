@@ -38,7 +38,7 @@ class Joueur extends ElementHtml{
          * La vitesse de déplacement de la raquette
          * @type {number}
          */
-        this.vitesseY=3;
+        this.vitesseY=5;
         /**
          * Direction dans laquelle se déplace la raquette
          * -1 vers le haut
@@ -55,6 +55,7 @@ class Joueur extends ElementHtml{
      * Fait monter la raquette
      */
     monte(){
+        this.$raquette.attr("sens","monte")
         this.$boutonMonte.addClass("flash");
         this.directionY=-1;
     }
@@ -62,6 +63,7 @@ class Joueur extends ElementHtml{
      * Fait descendre la raquette
      */
     descend(){
+         this.$raquette.attr("sens","descend")
         this.$boutonDescend.addClass("flash");
         this.directionY=1;
     }
@@ -69,6 +71,7 @@ class Joueur extends ElementHtml{
      * arrête la raquette
      */
     bougePas(){
+         this.$raquette.attr("sens","")
          this.$boutonMonte.add(this.$boutonDescend).removeClass("flash");
         this.directionY=0;
     }

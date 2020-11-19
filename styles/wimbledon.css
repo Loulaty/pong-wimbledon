@@ -10,6 +10,9 @@ html{
     --couleur-succes:#0f0;
 
 }
+*{
+    box-sizing: border-box !important;
+}
 body{
     background-color: var(--couleur-fond);
     color: #ffffff;
@@ -29,7 +32,7 @@ body{
     height: 100%;
     position: absolute;
     display: flex;
-    background-image: url('./skins/wimbledon/texture-background.png');
+    background-image: url('./skins/wimbledon/texture-background.jpg');
     justify-content: center;
     align-items: center;
 }
@@ -37,7 +40,7 @@ body{
 .terrain{
     transition: filter 1s, transform 1s;
     width:90vmin;
-    height: 45vmin;
+    height: calc( 9/16 * 90vmin );
     flex-shrink: 0;
     border: 1px solid transparent;
     border-top-color: var(--couleur-elements);
@@ -47,6 +50,7 @@ body{
     max-height: 90vh;
     background-image: url('./skins/wimbledon/terrain.png');
     background-size: cover;
+    background-position: center;
 }
 .terrain > *{
     position: absolute;
@@ -54,9 +58,7 @@ body{
 .terrain.pause{
     filter: blur(0px);
 }
-.terrain.pause .balle{
-    background-color: var(--couleur-erreur);
-}
+
 
 .haut{
     display: flex;
@@ -74,6 +76,18 @@ body{
     flex-direction: column;
 }
 
+.bas{
+    z-index: 3;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20vmin;
+    background-image: url('./skins/wimbledon/gradin.png');
+    background-size: 60px;
+    display: flex;
+    justify-content: space-around;
+}
+
 .logo{
     width: 15vmin;
     height: 15vmin;
@@ -83,49 +97,53 @@ body{
 }
 
 .nom,.score{
+    mix-blend-mode: hard-light;
     font-size: 5vmin;
-    font-weight: bold;
-    color: #FB5839;
+    font-weight: 700;
+    color: #fb8d39;
+    line-height: 1.1;
+}
+.score{
+    font-size: 8vmin;
+    font-weight: 800;
 }
 
-
-.balle{
-    transition: color 2s;
-    background-color: #fff;
-    --diamettre:30px;
-    width: var(--diamettre);
-    height: var(--diamettre);
-    top: calc( 50% - var(--diamettre) / 2 );
-    left: calc( 50% - var(--diamettre) / 2 );
-    border-radius: 100%;
-    background-image: url('./skins/wimbledon/balle.png');
-    background-size: cover;
-}
 
 .raquette{
     --hauteur:25%;
-    background-color: #fff;
-    width: 10px;
+    width: 15vmin;
     height:var(--hauteur);
-    outline: 1px solid var(--couleur-fond);
     outline-offset: -1px;
     top:calc( 50% - var(--hauteur) / 2  );
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.2s;
 }
 .raquette.joueur1{
-    left: 0;
+    left: -6%;
+    background-image: url("./skins/wimbledon/joueur1.png");
 }
 .raquette.joueur2{
-    right: 0;
+    right: -6%;
+    background-image: url("./skins/wimbledon/joueur2.png");
+}
+.raquette[sens='monte']{
+    transform: skewY(-15deg);
+}
+
+.raquette[sens='descend']{
+    transform: skewY(15deg);
 }
 
 .raquette.touche-balle{
-    background-color: #0f0;
+    transform: scale(1.1);
+    filter: saturate(1.5) invert(1);
 }
-.raquette.rate-balle{
-    background-color: var(--couleur-erreur);
-}
+
 /** effet de couleur qui peut être utilisé à plusieurs endroits **/
 .flash{
+    position: relative;
     color:var(--couleur-succes) !important;
 }
 
@@ -143,19 +161,6 @@ body{
     border: 1px solid var(--couleur-on-sait-pas-trop-foncee);
     border-radius: 4px;
     user-select:none;
-}
-
-.touche.top{
-    top:-15px;
-}
-.touche.left{
-    left:-40px;
-}
-.touche.bottom{
-    bottom:-15px;
-}
-.touche.right{
-    right: -40px;
 }
 
 .ecran-debut{
