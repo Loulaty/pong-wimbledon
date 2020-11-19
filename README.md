@@ -1,7 +1,10 @@
-# pong-jquery
-Un petit pong au clavier simplissime
+# Encore un pong
 
-### Joueur 1
+https://davidmarsprof.github.io/pong-wimbledon/
+
+Pour jouer...
+
+### Rafael
 touches A / Q 
-### Joueur 2
-touches haut / bas 
+### Roger
+touches P / M 

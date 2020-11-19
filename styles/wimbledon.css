@@ -87,6 +87,11 @@ body{
     display: flex;
     justify-content: space-around;
 }
+.bas .persos{
+    max-width: 900px;
+    display: flex;
+    justify-content: space-around;
+}
 
 .logo{
     width: 15vmin;
