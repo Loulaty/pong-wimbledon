@@ -24,17 +24,35 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfb8edd4-3248-4cdb-8dba-8c90b5de0281" name="Default Changelist" comment="chemin vers un code plus élégant">
+    <list default="true" id="cfb8edd4-3248-4cdb-8dba-8c90b5de0281" name="Default Changelist" comment="re plein de conneries">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/Audio.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Audio.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/Partie.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Partie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/pong.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/wimbledon.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound/do.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound/fa.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound/la.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound/mi.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound/pong.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound/pong1.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound/pong2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound/pong3.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound/pong4.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound/re.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound/si.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound/sol.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/skins/wimbledon/texture-background.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,6 +64,9 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1kJUDBvTqX5NdRlMcm92IWZmO0G" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -53,7 +74,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/sound" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -65,6 +87,12 @@
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\davidmars\Documents\GitHub\pong-wimbledon\sound" />
+      <recent name="C:\Users\davidmars\Documents\GitHub\pong-wimbledon\styles\fonts" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -75,7 +103,7 @@
       <updated>1605418066982</updated>
       <workItem from="1605418068367" duration="11657000" />
       <workItem from="1605723552953" duration="1067000" />
-      <workItem from="1605724707085" duration="4827000" />
+      <workItem from="1605724707085" duration="20609000" />
     </task>
     <task id="LOCAL-00001" summary="chemin vers un code plus élégant">
       <created>1605418227308</created>
@@ -84,7 +112,28 @@
       <option name="project" value="LOCAL" />
       <updated>1605418227308</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="plein de conneries">
+      <created>1605732218708</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1605732218708</updated>
+    </task>
+    <task id="LOCAL-00003" summary="plein de conneries">
+      <created>1605732511927</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1605732511927</updated>
+    </task>
+    <task id="LOCAL-00004" summary="re plein de conneries">
+      <created>1605747873091</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1605747873091</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,9 +153,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="chemin vers un code plus élégant" />
-    <option name="LAST_COMMIT_MESSAGE" value="chemin vers un code plus élégant" />
+    <MESSAGE value="plein de conneries" />
+    <MESSAGE value="re plein de conneries" />
+    <option name="LAST_COMMIT_MESSAGE" value="re plein de conneries" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="688" y="-939" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605746957472">
+      <screen x="-351" y="-1440" width="2560" height="1400" />
+    </state>
+    <state x="688" y="-939" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-351.-1440.2560.1400@-351.-1440.2560.1400" timestamp="1605746957472" />
     <state x="675" y="-886" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1605427140819">
       <screen x="-351" y="-1440" width="2560" height="1400" />
     </state>
@@ -119,9 +174,10 @@
       <screen x="-351" y="-1440" width="2560" height="1400" />
     </state>
     <state x="343" y="-1075" key="SettingsEditor/0.0.1920.1040/-351.-1440.2560.1400@-351.-1440.2560.1400" timestamp="1605431024030" />
-    <state x="521" y="-1021" key="Vcs.Push.Dialog.v2" timestamp="1605418230837">
+    <state x="521" y="-1021" key="Vcs.Push.Dialog.v2" timestamp="1605747876923">
       <screen x="-351" y="-1440" width="2560" height="1400" />
     </state>
-    <state x="521" y="-1021" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-351.-1440.2560.1400@-351.-1440.2560.1400" timestamp="1605418230837" />
+    <state x="521" y="-1021" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-351.-1440.2560.1400@-351.-1440.2560.1400" timestamp="1605747876923" />
+    <state x="654" y="311" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-351.-1440.2560.1400@0.0.1920.1040" timestamp="1605732515119" />
   </component>
 </project>
