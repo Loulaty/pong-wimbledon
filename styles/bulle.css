@@ -1,4 +1,4 @@
-/** genre une bulle de BD **/
+/** genre une bulle de BD 
 .bulle{
     transition: all 0.1s;
     position: absolute;
@@ -34,7 +34,7 @@
     }
 }
 
-/** un triangle css **/
+/** un triangle css 
 .bulle::after{
     position: absolute;
     top: 100%;
@@ -51,4 +51,4 @@
     opacity: 0;
     filter: blur(8px);
     margin-bottom: -10px;
-}
+}**/

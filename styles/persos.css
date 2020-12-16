@@ -1,4 +1,4 @@
-.perso{
+/*.perso{
     position: relative;
     --taille:10vmin;
     width: var(--taille);
@@ -90,4 +90,4 @@
 }
 .perso:nth-child(4+4n){
     animation-duration: 11s;
-}
+}*/
