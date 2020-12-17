@@ -35,6 +35,21 @@
     margin-top: 3vmin;
     margin-right: -30vmin;
 }
+#perso1{
+    background-image: url("./skins/wimbledon/public/6.png");
+    animation-duration: 4s;
+    --taille:8vmin;
+    margin-top: 3vmin;
+    margin-right: -30vmin;
+}
+#perso11{
+    background-image: url("./skins/wimbledon/public/5.png");
+    animation-duration: 4s;
+    --taille:8vmin;
+    margin-top: 3vmin;
+    margin-left: -30vmin;
+
+}
 
 @keyframes perso {
     0%{
