@@ -100,7 +100,20 @@ body{
     background-size: contain;
     background-repeat: no-repeat;
 }
-
+.s1{
+    width: 40vmin;
+    height: 40vmin;
+    background-image: url("./skins/wimbledon/score1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.s2{
+    width: 40vmin;
+    height: 40vmin;
+    background-image: url("./skins/wimbledon/score1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 .nom,.score{
     mix-blend-mode: hard-light;
     font-size: 5vmin;
