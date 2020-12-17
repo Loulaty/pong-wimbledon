@@ -88,9 +88,8 @@ body{
     justify-content: space-around;
 }
 .bas .persos{
-    max-width: 900px;
+    max-width: 7000px;
     display: flex;
-    justify-content: space-around;
 }
 
 .logo{
